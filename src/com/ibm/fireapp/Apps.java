@@ -30,6 +30,7 @@ public class Apps extends Activity implements OnItemClickListener {
 	List<AppList> applist;
 	List<String> appnameslist;
 	ListView appsLV;
+	String appidtoadd = "12";
 	BlueListApplication blApplication;
 	ArrayAdapter<AppList> appArrayAdapter;
 	ArrayAdapter<String> appnameadapter;
@@ -46,8 +47,12 @@ public class Apps extends Activity implements OnItemClickListener {
 		blApplication = (BlueListApplication) getApplication();
 		applist = blApplication.getAppList();
 		appnameslist = blApplication.getAppNamesList();
+		String[] appsarray = new String[] { "EPIC", "EPAS", "CWS", "CPI", "PIAUTO" };
+		//int i;
+	/*	for(int i=0;i<5;i++) {
+			createItem(appsarray[i]);
+		}*/
 		
-		//createItem();
 		appsLV = (ListView)findViewById(R.id.itemsList);
 		appnameadapter = new ArrayAdapter<String>(this, R.layout.list_item_1, appnameslist);
 		appsLV.setAdapter(appnameadapter);
@@ -115,11 +120,11 @@ public class Apps extends Activity implements OnItemClickListener {
 		}
 	}
 	
-	public void createItem() {
+	public void createItem(String appnametoadd) {
 		Log.d(CLASS_NAME, "Inside Create");
 		AppList app1 = new AppList();
-			app1.setAppID("11");
-			app1.setAppName("CIS");					
+			app1.setAppID((String) appidtoadd);
+			app1.setAppName(appnametoadd);					
 			// Use the IBMDataObject to create and persist the Item object.
 			app1.save().continueWith(new Continuation<IBMDataObject, Void>() {
 
@@ -152,10 +157,8 @@ public class Apps extends Activity implements OnItemClickListener {
 		// TODO Auto-generated method stub
 		int apppos = position;
 		String cisact = (String) appsLV.getItemAtPosition(apppos);
-		if (cisact.equals("CIS")) {
-			Intent cisratingintent = new Intent("com.ibm.fireapp.CIS");
+			Intent cisratingintent = new Intent("com.ibm.fireapp."+cisact);
 			startActivity(cisratingintent);
-		}
 		
 	}
 	
