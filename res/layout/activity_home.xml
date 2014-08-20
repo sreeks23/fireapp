@@ -17,7 +17,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/hello_world"
-                android:textSize="20dp" />
+                android:textColor="@color/list_text_color"
+                android:textSize="20sp" />
             <Button
                 android:id="@+id/benter"
                 android:layout_width="wrap_content"

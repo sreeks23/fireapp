@@ -2,72 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical" 
-    android:background="@drawable/bg1">
+    android:background="@drawable/bg1"
+    android:orientation="vertical" >
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:text="@string/appdetails" />
 
-    <ScrollView
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
-
-            <Button
-                android:id="@+id/bcis"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cis" />
-
-            <Button
-                android:id="@+id/bepic"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/epic" />
-
-            <Button
-                android:id="@+id/bcpi"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cpi" />
-
-            <Button
-                android:id="@+id/bepas"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/epas" />
-
-            <Button
-                android:id="@+id/bpiauto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/piauto" />
-
-            <Button
-                android:id="@+id/bhoact"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/hoact" />
-
-            <Button
-                android:id="@+id/bclaims"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/claims" />
-
-            <Button
-                android:id="@+id/bcws"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/cws" />
-        </LinearLayout>
-    </ScrollView>
+    <ListView
+        android:id="@+id/itemsList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+    </ListView>
 
 </LinearLayout>
