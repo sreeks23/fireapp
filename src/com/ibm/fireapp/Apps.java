@@ -156,9 +156,10 @@ public class Apps extends Activity implements OnItemClickListener {
 			long id) {
 		// TODO Auto-generated method stub
 		int apppos = position;
-		String cisact = (String) appsLV.getItemAtPosition(apppos);
-			Intent cisratingintent = new Intent("com.ibm.fireapp."+cisact);
-			startActivity(cisratingintent);
+		String appselected = (String) appsLV.getItemAtPosition(apppos);
+			Intent appdetailintent = new Intent("com.ibm.fireapp.APPDETAILS");
+			appdetailintent.putExtra("appname", appselected);
+			startActivity(appdetailintent);
 		
 	}
 	

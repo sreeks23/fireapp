@@ -42,6 +42,7 @@ public final class BlueListApplication extends Application {
 			.getSimpleName();
 	List<AppList> applist;
 	List<String> appnameslist;
+	List<EmpDetails> empdetails;
 
 	public BlueListApplication() {
 		registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
@@ -98,6 +99,7 @@ public final class BlueListApplication extends Application {
 		super.onCreate();
 		applist = new ArrayList<AppList>();
 		appnameslist = new ArrayList<String>();
+		empdetails = new ArrayList<EmpDetails>();
 		// Read from properties file.
 		Properties props = new java.util.Properties();
 		Context context = getApplicationContext();
@@ -117,6 +119,7 @@ public final class BlueListApplication extends Application {
 		IBMData.initializeService();
 		// Register the Item Specialization.
 		AppList.registerSpecialization(AppList.class);
+		EmpDetails.registerSpecialization(EmpDetails.class);
 	}
 
 	/**
@@ -130,5 +133,8 @@ public final class BlueListApplication extends Application {
 	}
 	public List<String> getAppNamesList() {
 		return appnameslist;
+	}
+	public List<EmpDetails> getEmpDetails() {
+		return empdetails;
 	}
 }
