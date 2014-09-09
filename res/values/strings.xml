@@ -1,20 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">fireapp</string>
+    <string name="app_name">FFIC PMO</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="enter">Enter Inside</string>
-    <string name="appdetails">Application Details</string>
-    <string name="cis">CIS</string>
-	<string name="epas">EPAS</string>
-	<string name="claims">CLAIMS</string>
-	<string name="piauto">PI AUTO</string>
-	<string name="cws">CWS</string>
-	<string name="cpi">CPI</string>
-	<string name="hoact">HOACT</string>
-	<string name="epic">EPIC</string>
-	<string name="issue">Inside Issue</string>
-	<string name="errors">Inside Errors</string>
+    <string name="appdetails">Business Areas</string>
 	
 </resources>

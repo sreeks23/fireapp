@@ -21,7 +21,7 @@ public class Logo extends Activity {
         	public void run() {
         		try {
         			sleep(1000);
-        			Intent newintent = new Intent("com.ibm.fireapp.HOME");
+        			Intent newintent = new Intent("com.ibm.fireapp.DECISIONACTIVITY");
         			startActivity(newintent);
         		} catch (InterruptedException e) {
 					// TODO Auto-generated catch block

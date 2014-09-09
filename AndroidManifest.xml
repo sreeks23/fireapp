@@ -9,17 +9,17 @@
         android:targetSdkVersion="19" />
     <!-- Permissions -->
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
     <uses-permission android:name="android.permission.USE_CREDENTIALS" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name=".BlueListApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
-        android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+        android:theme="@android:style/Theme.NoTitleBar.Fullscreen" >
         <activity
             android:name=".Logo"
             android:label="@string/app_name" >
@@ -39,6 +39,15 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".DecisionActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="com.ibm.fireapp.DECISIONACTIVITY" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".Apps"
             android:label="@string/app_name" >
             <intent-filter>
@@ -48,109 +57,46 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppCIS"
+            android:name=".IncApps"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="com.ibm.fireapp.CIS" />
+                <action android:name="com.ibm.fireapp.INCAPPS" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".CISRating"
+            android:name=".AppDetailsNew"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="com.ibm.fireapp.CISRATING" />
+                <action android:name="com.ibm.fireapp.APPDETAILSNEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".CISIssue"
+            android:name=".IncidentReport"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="com.ibm.fireapp.CISISSUE" />
+                <action android:name="com.ibm.fireapp.INCIDENTREPORT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".CISErrors"
+            android:name=".IncidentMasterReport"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="com.ibm.fireapp.CISERRORS" />
+                <action android:name="com.ibm.fireapp.INCIDENTMASTERREPORT" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".AppCLAIMS"
+            android:name=".EmpSearch"
             android:label="@string/app_name" >
             <intent-filter>
-                <action android:name="com.ibm.fireapp.CLAIMS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppCPI"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.CPI" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppCWS"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.CWS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppEPAS"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.EPAS" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppEPIC"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.EPIC" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppHOACT"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.HOACT" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppPIAUTO"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.PIAUTO" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".AppDetails"
-            android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="com.ibm.fireapp.APPDETAILS" />
+                <action android:name="com.ibm.fireapp.EMPSEARCH" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>

@@ -2,31 +2,23 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fdf5e6"
     android:orientation="vertical" >
     
     <TextView 
         android:id="@+id/appnamedetal"
         android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textSize="15sp"
+    android:textSize="25sp"
+    android:background="@color/black"
+    android:textColor="@color/white"
         />
-    <TextView 
-        android:id="@+id/sbam"
+    
+	
+	<ListView
+        android:id="@+id/emplist"
         android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="15sp"
-        />
-    <TextView 
-        android:id="@+id/bam"
-        android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="15sp"
-        />
-    <TextView 
-        android:id="@+id/dm"
-        android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="15sp"
-        />
-
+        android:layout_height="wrap_content">
+            </ListView>
+	
 </LinearLayout>

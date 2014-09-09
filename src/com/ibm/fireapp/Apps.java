@@ -1,5 +1,7 @@
 package com.ibm.fireapp;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import bolts.Continuation;
@@ -53,6 +55,7 @@ public class Apps extends Activity implements OnItemClickListener {
 			createItem(appsarray[i]);
 		}*/
 		
+		appnameslist.clear();
 		appsLV = (ListView)findViewById(R.id.itemsList);
 		appnameadapter = new ArrayAdapter<String>(this, R.layout.list_item_1, appnameslist);
 		appsLV.setAdapter(appnameadapter);
@@ -99,15 +102,13 @@ public class Apps extends Activity implements OnItemClickListener {
                         	AppList xyz = new AppList();
                         	xyz = (AppList) app;
                         	String appname1 = xyz.getAppname();
-                        	Log.d(CLASS_NAME, "Application Name " + appname1 + objects.toString());
+                        //	Log.d(CLASS_NAME, "Application Name " + appname1 + objects.toString());
                             applist.add((AppList) app);
                             appnameslist.add((String) appname1);
                           
                         }
                         
-                       // sortItems(applist);
-                        Log.d(CLASS_NAME, "data changed");
-                    //    appArrayAdapter.notifyDataSetChanged();
+                       sortItems(appnameslist);
                         appnameadapter.notifyDataSetChanged();
 					}
 					return null;
@@ -151,13 +152,26 @@ public class Apps extends Activity implements OnItemClickListener {
 			// Set text field back to empty after item is added.
 		}
 	
+	private void sortItems(List<String> theList) {
+		// Sort collection by case insensitive alphabetical order.
+		Collections.sort(theList, new Comparator<String>() {
+			public int compare(String lhs,
+					String rhs) {
+				String lhsName = lhs;
+				String rhsName = rhs;
+				return lhsName.compareToIgnoreCase(rhsName);
+			}
+		});
+	}
+	
 	@Override
 	public void onItemClick(AdapterView<?> parent, View view, int position,
 			long id) {
 		// TODO Auto-generated method stub
 		int apppos = position;
 		String appselected = (String) appsLV.getItemAtPosition(apppos);
-			Intent appdetailintent = new Intent("com.ibm.fireapp.APPDETAILS");
+			Intent appdetailintent = new Intent("com.ibm.fireapp.APPDETAILSNEW");
+		//	Intent appdetailintent = new Intent("com.ibm.fireapp.INCIDENTREPORT");
 			appdetailintent.putExtra("appname", appselected);
 			startActivity(appdetailintent);
 		

@@ -10,10 +10,10 @@ import android.widget.Button;
 import android.widget.ScrollView;
 import android.widget.TextView;
 
-public class Home extends Activity implements OnClickListener{
+public class Home extends Activity implements OnClickListener {
 
-	String des1 = "Fireman’s Fund was founded in San Francisco in 1863 by retired sea" 
-			+ " captain William Holdredge. He started an insurance company to protect the " 
+	String des1 = "Fireman’s Fund was founded in San Francisco in 1863 by retired sea"
+			+ " captain William Holdredge. He started an insurance company to protect the "
 			+ "homes and businesses of San Francisco, a town that was booming due to the Gold Rush.\n"
 			+ "          Our name comes from Holdredge’s pledge to donate 10% of company profits to the"
 			+ " widows and children of fallen San Francisco firefighters.\n"
@@ -22,31 +22,29 @@ public class Home extends Activity implements OnClickListener{
 			+ " day, in every moment. In moments when we help to rebuild after a disaster, moments "
 			+ "we’re there to answer a policyholder’s question, moments when we partner with agents"
 			+ " and brokers to design an innovative solution.\n"
-			+ "We celebrated our sesquicentennial in 2013. Looking back at our milestones inspires us" 
+			+ "We celebrated our sesquicentennial in 2013. Looking back at our milestones inspires us"
 			+ " to keep innovating into the future.\n"
-			+ "We continue to honor our philanthropic roots by funding equipment and training for fire" 
+			+ "We continue to honor our philanthropic roots by funding equipment and training for fire"
 			+ " service organizations nationwide.";
-			
-	
-@Override
+
+	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_home);
-	    TextView view = (TextView) findViewById(R.id.para1);
-	    Button b1 = (Button) findViewById(R.id.benter);
-	    b1.setOnClickListener(this);
-	//    view.setMovementMethod(new ScrollingMovementMethod());
-	    view.setText(des1);
+		TextView view = (TextView) findViewById(R.id.para1);
+		Button b1 = (Button) findViewById(R.id.benter);
+		b1.setOnClickListener(this);
+		// view.setMovementMethod(new ScrollingMovementMethod());
+		view.setText(des1);
 	}
 
+	@Override
+	public void onClick(View v) {
+		// TODO Auto-generated method stub
+		Intent appintent = new Intent("com.ibm.fireapp.DECISIONACTIVITY");
+		startActivity(appintent);
 
-@Override
-public void onClick(View v) {
-	// TODO Auto-generated method stub
-	Intent appintent = new Intent("com.ibm.fireapp.APPS");
-	startActivity(appintent);
-	
-}
+	}
 
 }

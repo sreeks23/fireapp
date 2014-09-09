@@ -8,17 +8,22 @@ public class EmpDetails extends IBMDataObject {
 	public static final String CLASS_NAME = "EmpDetails";
 	private static final String AppName = "app_name";
 	private static final String Name = "employee_name";
-	private static final String Role = "role";
+	//private static final String Role = "role";
 	private static final String Skill = "skill";
+	private static final String Phone = "phone";
 	
+
+	public String getPhone() {
+		return (String) getObject(Phone);
+	}
 
 	public  String getName() {
 		return (String) getObject(Name);
 	}
 
-	public  String getRole() {
+/*	public  String getRole() {
 		return (String) getObject(Role);
-	}
+	}*/
 
 	public  String getSkill() {
 		return (String) getObject(Skill);
@@ -52,8 +57,11 @@ public class EmpDetails extends IBMDataObject {
 	public void setSkill(String name) {
 		setObject(Skill, (name != null) ? name : "");
 	}
-	public void setRole(String name) {
+	/*public void setRole(String name) {
 		setObject(Role, (name != null) ? name : "");
+	}*/
+	public void setPhone(String name) {
+		setObject(Phone, (name != null) ? name : "");
 	}
 	/**
 	 * When calling toString() for an item, we'd really only want the name.
@@ -78,10 +86,14 @@ public class EmpDetails extends IBMDataObject {
 		theItemName = getSkill();
 		return theItemName;
 	}
-	public String toStringRole() {
+/*	public String toStringRole() {
 		String theItemName = "";
 		theItemName = getRole();
 		return theItemName;
+	}*/
+	public String toStringPhone() {
+		String theItemName = "";
+		theItemName = getPhone();
+		return theItemName;
 	}
-
 }

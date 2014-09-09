@@ -1,0 +1,51 @@
+<!-- 
+Copyright 2014 IBM Corp. All Rights Reserved
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+ 
+http://www.apache.org/licenses/LICENSE-2.0  
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fdf5e6"
+    android:orientation="vertical" >
+    
+<TextView
+    android:id="@+id/emp1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/list_text_color"
+    android:textSize="20sp"
+    android:gravity="center_vertical"
+    android:padding="0dp"
+    android:layout_marginLeft="10dp"
+/>
+<TextView
+    android:id="@+id/role1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/list_text_color"
+    android:textSize="15sp"
+    android:gravity="center_vertical"
+    android:padding="0dp"
+    android:layout_marginLeft="10dp"
+/>
+<TextView
+    android:id="@+id/phone1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textColor="@color/blue"
+    android:textSize="15sp"
+    android:gravity="center_vertical"
+    android:padding="0dp"
+    android:layout_marginLeft="10dp"
+/>
+</LinearLayout>

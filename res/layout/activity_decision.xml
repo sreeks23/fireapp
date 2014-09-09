@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fdf5e6" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:background="@color/black"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:text="IBM-FFIC PMO Dashboard"
+        android:textColorLink="@color/white"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bempdecision"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="84dp"
+                android:background="@drawable/button_effect1"
+                android:fadingEdge="horizontal"
+                android:fadingEdgeLength="10dp"
+                android:fitsSystemWindows="true"
+                android:padding="3dp"
+                android:text="Employee Details"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/bempsrch"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/bempdecision"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_effect1"
+                android:padding="3dp"
+                android:text="Employee Search"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/bincdecision"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bempdecision"
+                android:layout_below="@+id/bempsrch"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_effect1"
+                android:padding="3dp"
+                android:text="Incident Details"
+                android:textSize="25sp" />
+
+            <Button
+                android:id="@+id/bincmstrreport"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/bincdecision"
+                android:layout_below="@+id/bincdecision"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/button_effect1"
+                android:padding="3dp"
+                android:text="Incident Report"
+                android:textSize="25sp" />
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

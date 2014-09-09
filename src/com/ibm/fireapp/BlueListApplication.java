@@ -41,8 +41,13 @@ public final class BlueListApplication extends Application {
 	private static final String CLASS_NAME = BlueListApplication.class
 			.getSimpleName();
 	List<AppList> applist;
-	List<String> appnameslist;
+	List<IncAppsList> incappslist;
+	List<String> appnameslist, incappnameslist;
 	List<EmpDetails> empdetails;
+	List<String> empnamesL;
+	List<IncidentList> inclist;
+	List<IncidentBAReport> incbalist;
+	List<IncidentReportDetails> increpdetlist;
 
 	public BlueListApplication() {
 		registerActivityLifecycleCallbacks(new ActivityLifecycleCallbacks() {
@@ -98,8 +103,15 @@ public final class BlueListApplication extends Application {
 		Log.d(CLASS_NAME, "Inside blue on create");
 		super.onCreate();
 		applist = new ArrayList<AppList>();
+		incappslist = new ArrayList<IncAppsList>();
 		appnameslist = new ArrayList<String>();
+		incappnameslist = new ArrayList<String>();
 		empdetails = new ArrayList<EmpDetails>();
+		empnamesL = new ArrayList<String>();
+		inclist = new ArrayList<IncidentList>();
+		incbalist = new ArrayList<IncidentBAReport>();
+		increpdetlist = new ArrayList<IncidentReportDetails>();
+		
 		// Read from properties file.
 		Properties props = new java.util.Properties();
 		Context context = getApplicationContext();
@@ -119,7 +131,9 @@ public final class BlueListApplication extends Application {
 		IBMData.initializeService();
 		// Register the Item Specialization.
 		AppList.registerSpecialization(AppList.class);
+		IncAppsList.registerSpecialization(IncAppsList.class);
 		EmpDetails.registerSpecialization(EmpDetails.class);
+		IncidentList.registerSpecialization(IncidentList.class);
 	}
 
 	/**
@@ -134,7 +148,25 @@ public final class BlueListApplication extends Application {
 	public List<String> getAppNamesList() {
 		return appnameslist;
 	}
+	public List<IncAppsList> getIncAppsList() {
+		return incappslist;
+	}
+	public List<String> getIncAppNamesList() {
+		return incappnameslist;
+	}
 	public List<EmpDetails> getEmpDetails() {
 		return empdetails;
+	}
+	public List<String> getEmpNames() {
+		return empnamesL;
+	}
+	public List<IncidentList> getIncidentList() {
+		return inclist;
+	}
+	public List<IncidentBAReport> getIncidentBAList() {
+		return incbalist;
+	}
+	public List<IncidentReportDetails> getIncidentReportDetailsList() {
+		return increpdetlist;
 	}
 }
