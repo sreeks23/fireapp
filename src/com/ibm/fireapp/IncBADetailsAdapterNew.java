@@ -71,7 +71,7 @@ public class IncBADetailsAdapterNew extends BaseAdapter {
 			incno.setText("   " + incbadetails.getIncno());
 			incdesc.setText("");
 			inccs.setText("");
-			incno.setBackgroundColor(0xff00ff00);
+			incno.setBackgroundColor(0xff00a37a);
 		}
 
 		Log.d(CLASS_NAME, incbadetails.getIncPri());

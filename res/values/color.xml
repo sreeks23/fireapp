@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <color name="red">#ffff0000</color>
+    <color name="red">#00a37a</color>
     <color name="white">#FFFFFF</color>
-    <color name="black">#000000</color>
+    <color name="black">#00a37a</color>
     <color name="blue">#0000ff</color>
-    <color name="red2">#ff0000</color>
+    <color name="red2">#00a37a</color>
     <color name="actionBarBackground">#457EB1</color>
     <color name="actionBarBorder">#255F95</color>
     <color name="list_text_color">#5b5b5b</color>

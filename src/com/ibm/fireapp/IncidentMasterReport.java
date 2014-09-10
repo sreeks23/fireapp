@@ -4,20 +4,29 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
+import org.achartengine.GraphicalView;
+
 import bolts.Continuation;
 import bolts.Task;
 
 import com.ibm.mobile.services.data.IBMDataException;
 import com.ibm.mobile.services.data.IBMDataObject;
 import com.ibm.mobile.services.data.IBMQuery;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.GraphView.GraphViewData;
+import com.jjoe64.graphview.GraphViewSeries;
+import com.jjoe64.graphview.LineGraphView;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.TextView;
+
+import com.ibm.fireapp.R;
 
 public class IncidentMasterReport extends Activity {
 
@@ -42,8 +51,8 @@ public class IncidentMasterReport extends Activity {
 		inclist = blApplication.getIncidentList();
 		increpdetlist = blApplication.getIncidentReportDetailsList();
 		hdr2 = (TextView) findViewById(R.id.mstrhdg2);
-		hdr2.setText("                                      AGE (In Days)                   \n" +
-				     "Business Area  <=5   >5<=30    >30<=60   >60<=90    >90   Inflow");
+		hdr2.setText("                                      AGE (In Days)                   \n"
+				+ "Business Area  <=5   >5<=30    >30<=60   >60<=90    >90   Inflow");
 
 		inclist.clear();
 		increpdetlist.clear();
@@ -51,6 +60,7 @@ public class IncidentMasterReport extends Activity {
 		increpdet_adapter = new IncReportDetailsAdapterNew(increpdetlist, this);
 		increpdetLV.setAdapter(increpdet_adapter);
 		listItems();
+	//	drawgraph();
 
 	}
 
@@ -87,18 +97,7 @@ public class IncidentMasterReport extends Activity {
 								Log.d(CLASS_NAME, "Inside else");
 								inclist.clear();
 								increpdetlist.clear();
-								/*
-								 * IncidentReportDetails newincrepdet = new
-								 * IncidentReportDetails();
-								 * newincrepdet.setBusinessArea(" BA/AGE ");
-								 * newincrepdet.setBetween30To60(">30<=60");
-								 * newincrepdet.setBetween5To30(">5<=30");
-								 * newincrepdet.setBetween60To90(">60<=90");
-								 * newincrepdet.setGreater90(">90");
-								 * newincrepdet.setInflow("New");
-								 * newincrepdet.setLessThan5("<=5");
-								 * increpdetlist.add(newincrepdet);
-								 */
+
 								for (IBMDataObject app : objects) {
 									IncidentList axyz = new IncidentList();
 									axyz = (IncidentList) app;
@@ -121,6 +120,7 @@ public class IncidentMasterReport extends Activity {
 								sortItems(increpdetlist);
 								increpdet_adapter.notifyDataSetChanged();
 								progressDialog.dismiss();
+								
 
 							}
 							return null;
@@ -279,4 +279,28 @@ public class IncidentMasterReport extends Activity {
 		}
 
 	}
+
+	/*
+	 * private void drawgraph() {
+	 * 
+	 * GraphViewSeries exampleSeries = new GraphViewSeries( new GraphViewData[]
+	 * { new GraphViewData(1, 2.0d), new GraphViewData(2, 1.5d), new
+	 * GraphViewData(3, 2.5d), new GraphViewData(4, 1.0d) });
+	 * 
+	 * GraphView graphView = new LineGraphView(this // context , "GraphViewDemo"
+	 * ); // heading graphView.addSeries(exampleSeries); // data
+	 * 
+	 * Log.d(CLASS_NAME, "inside draw"); LinearLayout layout = (LinearLayout)
+	 * findViewById(R.id.graph1); layout.addView(graphView); }
+	 */
+
+/*	private void drawgraph() {
+		Log.d(CLASS_NAME, "inside draw");
+		LineGraph line = new LineGraph();
+		GraphicalView lineIntent = line.getView(this);
+		// startActivity(lineIntent);
+		LinearLayout layout = (LinearLayout) findViewById(R.id.graph1);
+		layout.addView(lineIntent);
+
+	}*/
 }
